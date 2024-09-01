@@ -37,43 +37,8 @@ export default async function Navbar() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden sm:block">
-          {(await isAuthenticated()) ? (
-            <div className="flex items-center gap-4">
-              <Link href={"/create-prompt"}>
-                <Button>Create prompt</Button>
-              </Link>
-
-              <span title="profile" className="relative flex">
-                <Image
-                  src={user?.picture || "/assets/random-user.jpeg"}
-                  alt="profile image"
-                  width={50}
-                  height={50}
-                  className="rounded-full object-cover"
-                />
-
-                <abbr title="verified">
-                <BadgeCheck className="w-5 h-5 rounded-full text-blue-700 -ml-2" />
-                </abbr>
-              </span>
-            </div>
-          ) : (
-            <div className="flex items-center gap-6">
-              <LoginLink>
-                <Button>Sign In</Button>
-              </LoginLink>
-
-              <RegisterLink>
-                <Button variant={"outline"}>Sign Up</Button>
-              </RegisterLink>
-            </div>
-          )}
-        </div>
-
-        {/* Mobile navigation */}
-        <div className="sm:hidden">
+        {/* Navigation */}
+        <div>
           {(await isAuthenticated()) ? (
             <div>
               <DropdownMenu>
@@ -83,13 +48,18 @@ export default async function Navbar() {
                     alt="profile image"
                     width={40}
                     height={40}
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover cursor-pointer select-none"
                   />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
+
+                  <DropdownMenuItem className="underline">
+                   {`${user?.given_name} ${user?.family_name}`}   
+                  </DropdownMenuItem>
+                    <DropdownMenuSeparator className="my-3"/>
                     <DropdownMenuItem className="text-sm">
                       Verified{" "}
                       <BadgeCheck className="ml-1 w-4 h-4 text-blue-700" />
@@ -100,16 +70,10 @@ export default async function Navbar() {
                       <DropdownMenuItem>Create prompt</DropdownMenuItem>
                     </Link>
                   </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-                  <Link href={"https://github.com/mohammad-1105"}>
-                    <DropdownMenuItem>GitHub</DropdownMenuItem>
-                  </Link>
-                  <DropdownMenuItem>Support</DropdownMenuItem>
-
-                  <DropdownMenuSeparator />
+                  <DropdownMenuSeparator className="my-3"/>
                   <LogoutLink className="w-full">
                     <Button className="w-full" variant={"destructive"}>
-                      Log out
+                      Sign out
                     </Button>
                   </LogoutLink>
                 </DropdownMenuContent>
