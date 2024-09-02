@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "PromptLab",
@@ -25,10 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} dark antialiased`}>
-        <Navbar />
-        {children}
-        </body>
+      <body className={`${poppins.className}antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

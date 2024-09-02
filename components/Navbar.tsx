@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { BadgeCheck } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default async function Navbar() {
   const { getUser, isAuthenticated } = getKindeServerSession();
@@ -55,11 +56,10 @@ export default async function Navbar() {
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
-
-                  <DropdownMenuItem className="underline">
-                   {`${user?.given_name} ${user?.family_name}`}   
-                  </DropdownMenuItem>
-                    <DropdownMenuSeparator className="my-3"/>
+                    <DropdownMenuItem className="underline">
+                      {`${user?.given_name} ${user?.family_name}`}
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator className="my-3" />
                     <DropdownMenuItem className="text-sm">
                       Verified{" "}
                       <BadgeCheck className="ml-1 w-4 h-4 text-blue-700" />
@@ -69,8 +69,12 @@ export default async function Navbar() {
                     <Link href={"/create-prompt"}>
                       <DropdownMenuItem>Create prompt</DropdownMenuItem>
                     </Link>
+
+                    <span className="flex justify-end my-2">
+                      <ThemeToggle />
+                    </span>
                   </DropdownMenuGroup>
-                  <DropdownMenuSeparator className="my-3"/>
+                  <DropdownMenuSeparator className="my-3" />
                   <LogoutLink className="w-full">
                     <Button className="w-full" variant={"destructive"}>
                       Sign out
