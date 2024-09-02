@@ -1,3 +1,4 @@
+import CreatePrompt from "@/components/CreatePrompt";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { TriangleAlertIcon } from "lucide-react";
@@ -19,5 +20,9 @@ export default async function CreatePromptPage() {
       </div>
     );
   }
-  return <div>CreatePromptPage</div>;
+  return (
+    <div className="">
+      <CreatePrompt />
+    </div>
+  );
 }

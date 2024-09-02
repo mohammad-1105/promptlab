@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/toaster"
 
 const poppins = Poppins({
   weight: "400",
@@ -35,6 +36,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Toaster/>
         </ThemeProvider>
       </body>
     </html>

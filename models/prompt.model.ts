@@ -20,7 +20,7 @@ const promptSchema: Schema<Prompt> = new Schema(
       type: String,
       required: [true, "prompt is required."],
       minlength: [40, "prompt should be at least 40 characters."],
-      maxlength: [200, "prompt should be at most 200 characters."],
+      maxlength: [500, "prompt should be at most 500 characters."],
     },
     authorImageUrl: String,
     author: String,
