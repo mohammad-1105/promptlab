@@ -4,7 +4,7 @@ export const promptSchema = z.object({
   promptTitle: z
     .string({ message: "prompt title is required" })
     .min(8, { message: "prompt title should be at least 8 characters." })
-    .max(32, { message: "prompt title should be at most 32 characters." }),
+    .max(50, { message: "prompt title should be at most 50 characters." }),
 
   prompt: z
     .string({ message: "prompt is required" })

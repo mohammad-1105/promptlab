@@ -10,6 +10,7 @@ import {
 } from "./ui/card";
 
 export interface PromptCardProps {
+  _id?: string;
   promptTitle: string;
   prompt: string;
   authorImageUrl: string;
@@ -25,7 +26,7 @@ export default function PromptCard({
   tag,
 }: PromptCardProps) {
   return (
-    <Card>
+    <Card className="w-full max-w-sm">
       <CardHeader>
         <CardTitle>{promptTitle}</CardTitle>
         <CardDescription>A brief description of the prompt.</CardDescription>

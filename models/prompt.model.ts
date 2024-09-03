@@ -14,7 +14,7 @@ const promptSchema: Schema<Prompt> = new Schema(
       type: String,
       required: [true, "prompt title is required."],
       minlength: [8, "prompt title should be at least 8 characters."],
-      maxlength: [32, "prompt title should be at most 32 characters."],
+      maxlength: [50, "prompt title should be at most 50 characters."],
     },
     prompt: {
       type: String,
