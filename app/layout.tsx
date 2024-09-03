@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   weight: "400",
@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}antialiased`}>
+      <body
+        className={`${poppins.className}antialiased selection:bg-primary selection:text-primary-foreground`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -36,7 +38,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          <Toaster/>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

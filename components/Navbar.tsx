@@ -69,6 +69,9 @@ export default async function Navbar() {
                     <Link href={"/create-prompt"}>
                       <DropdownMenuItem>Create prompt</DropdownMenuItem>
                     </Link>
+                    <Link href={"/explore-prompts"}>
+                      <DropdownMenuItem>Explore prompts</DropdownMenuItem>
+                    </Link>
 
                     <span className="flex justify-end my-2">
                       <ThemeToggle />
