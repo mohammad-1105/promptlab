@@ -11,6 +11,7 @@ PromptLab is a Next.js-based platform that allows users to register, create, and
 - **Pagination:** View prompts with pagination to easily navigate through the list.
 - **Responsive Design:** Built with ShadCN UI for a modern, responsive design.
 - **Real-Time Toast Notifications:** User feedback through toast notifications on various actions.
+- **Real time search integration:** Search the prompts by title or tag. You will find it under 0.5 secs
 - **Will be addiing more features soon**
 
 ## Tech Stack
