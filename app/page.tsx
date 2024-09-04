@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default async function Home() {
   const { isAuthenticated } = getKindeServerSession();
@@ -39,17 +40,18 @@ export default async function Home() {
                   <Link
                     href="/explore-prompts"
                     className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                    
                   >
                     Explore Prompts
                   </Link>
                 </div>
               </div>
-              <img
-                src="https://images.pexels.com/photos/8438979/pexels-photo-8438979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                width="550"
-                height="310"
+              <Image
+                src={"/assets/hero.jpg"}
+                width={550}
+                height={310}
                 alt="Hero"
+                placeholder={"blur"}
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk4A6tBwABVADhFXBKhQAAAABJRU5ErkJggg=="
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last select-none"
               />
             </div>
@@ -196,7 +198,6 @@ export default async function Home() {
               <Link
                 href="/explore-prompts"
                 className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-
               >
                 View More Prompts
               </Link>
