@@ -1,8 +1,6 @@
 import Prompts from "@/components/Prompts";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Input } from "@/components/ui/input";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { SearchIcon, TriangleAlertIcon } from "lucide-react";
+import Image from "next/image";
 
 export default async function PromptsPage() {
   const { isAuthenticated } = getKindeServerSession();
@@ -10,14 +8,15 @@ export default async function PromptsPage() {
 
   if (!isUserAuthenticated) {
     return (
-      <div className="w-full h-screen flex justify-center items-center px-5">
-        <Alert variant="destructive" className="w-full max-w-2xl mx-auto">
-          <TriangleAlertIcon className="h-4 w-4" />
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>
-            You are not authenticated. Please Sign in to see prompts
-          </AlertDescription>
-        </Alert>
+      <div className="w-full flex justify-center items-center px-5">
+       
+        <Image
+          src={"/assets/warning.jpg"}
+          width={300}
+          height={300}
+          alt="warning-image"
+          className="rounded-full object-cover mt-12"
+        />
       </div>
     );
   }
@@ -29,17 +28,8 @@ export default async function PromptsPage() {
           Browse through the latest prompts created by our community.
         </p>
       </div>
-      <div className="relative w-full max-w-md mx-auto mt-5 px-3 sm:px-0">
-        <SearchIcon className="absolute left-4 sm:left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-        <Input
-          type="search"
-          placeholder="Search for prompts..."
-          className="pl-10 pr-4 py-2 rounded-md w-full"
-        />
-      </div>
-
       {/* prompts card section */}
-      <Prompts/>
+      <Prompts />
     </div>
   );
 }
