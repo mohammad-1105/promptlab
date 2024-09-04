@@ -1,5 +1,3 @@
-import Container from "@/components/Container";
-import PromptCard from "@/components/PromptCard";
 import Prompts from "@/components/Prompts";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Input } from "@/components/ui/input";

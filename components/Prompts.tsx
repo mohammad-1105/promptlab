@@ -5,7 +5,6 @@ import PromptCard from "./PromptCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 import PaginationBox from "./Pagination";
 
 export default function Prompts() {
